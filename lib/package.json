@@ -1,0 +1,53 @@
+{
+  "name": "@asgardeo/passport-asgardeo",
+  "version": "0.0.0",
+  "description": "Asgardeo Strategy for Passport.js",
+  "author": "WSO2",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/asgardeo/asgardeo-passport#readme",
+  "bugs": {
+    "url": "https://github.com/asgardeo/asgardeo-passport/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/asgardeo/asgardeo-passport",
+    "directory": "lib"
+  },
+  "keywords": [
+    "passport",
+    "openid",
+    "asgardeo",
+    "auth",
+    "authn",
+    "authentication",
+    "identity"
+  ],
+  "main": "dist/index.js",
+  "dependencies": {
+    "oauth": "0.9.x",
+    "passport-strategy": "1.x.x"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "chai": "2.x.x",
+    "chai-passport-strategy": "3.x.x",
+    "jws": "^4.0.0",
+    "make-node": "0.3.x",
+    "mocha": "2.x.x",
+    "proxyquire": "^1.7.10",
+    "sinon": "^1.17.6",
+    "typescript": "^5.7.2"
+  },
+  "engines": {
+    "node": ">= 0.6.0"
+  },
+  "scripts": {
+    "build": "tsc --project tsconfig.lib.json",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prepare": "npm run build",
+    "test": "mocha --require ./__tests__/bootstrap/node --recursive",
+    "test:ci": "mocha --require ./__tests__/bootstrap/node --recursive",
+    "typecheck": "tsc --project tsconfig.json --noEmit"
+  }
+}

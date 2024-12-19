@@ -1,34 +1,54 @@
 {
-  "name": "passport-asgardeo",
-  "version": "0.1.1",
-  "description": "Asgardeo authentication strategy for Passport.",
+  "private": true,
+  "name": "@asgardeo/passport-asgardeo-workspace",
+  "version": "0.0.0",
+  "description": "workspace for managing the source code of the passport-asgardeo package",
+  "author": "WSO2",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/asgardeo/passport-asgardeo#README",
+  "bugs": {
+    "url": "https://github.com/asgardeo/passport-asgardeo/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/asgardeo/passport-asgardeo"
+  },
   "keywords": [
-    "passport",
-    "openid",
     "asgardeo",
-    "auth",
-    "authn",
+    "passport",
     "authentication",
-    "identity"
+    "strategy",
+    "wso2",
+    "oidc",
+    "oauth"
   ],
-  "main": "./lib",
-  "dependencies": {
-    "oauth": "0.9.x",
-    "passport-strategy": "1.x.x"
+  "scripts": {
+    "build": "nx run-many --target=build --parallel",
+    "changeset": "changeset",
+    "lint": "nx run-many --target=lint --parallel",
+    "publish:packages": "changeset publish",
+    "test": "nx run-many --target=test --parallel",
+    "test:ci": "nx run-many --target=test:ci --parallel",
+    "typecheck": "nx run-many --target=typecheck --parallel",
+    "version:packages": "changeset version && pnpm install --lockfile-only"
   },
   "devDependencies": {
-    "chai": "2.x.x",
-    "chai-passport-strategy": "3.x.x",
-    "jws": "^4.0.0",
-    "make-node": "0.3.x",
-    "mocha": "2.x.x",
-    "proxyquire": "^1.7.10",
-    "sinon": "^1.17.6"
+    "@changesets/changelog-github": "^0.5.0",
+    "@changesets/cli": "^2.27.11",
+    "@wso2/eslint-plugin": "https://gitpkg.now.sh/brionmario/wso2-ui-configs/packages/eslint-plugin?fa0b844715320a3953d6d055997c0770f8695082",
+    "@wso2/prettier-config": "https://gitpkg.now.sh/brionmario/wso2-ui-configs/packages/prettier-config?fa0b844715320a3953d6d055997c0770f8695082",
+    "eslint": "~8.57.0",
+    "nx": "20.2.2",
+    "prettier": "^3.4.2"
   },
+  "workspaces": [
+    "lib"
+  ],
   "engines": {
-    "node": ">= 0.6.0"
+    "node": ">=18",
+    "pnpm": ">=8"
   },
-  "scripts": {
-    "test": "mocha --require ./test/bootstrap/node --recursive"
+  "publishConfig": {
+    "access": "restricted"
   }
 }
