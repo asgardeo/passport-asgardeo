@@ -23,6 +23,12 @@
     "identity"
   ],
   "main": "dist/index.js",
+  "files": [
+    "dist",
+    "package.json",
+    "LICENSE",
+    "README.md"
+  ],
   "dependencies": {
     "oauth": "0.9.x",
     "passport-strategy": "1.x.x"
